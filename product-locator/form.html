@@ -11,26 +11,17 @@
             <h1>Product Locator</h1>
         </header>
 
-        <section id="homepage">
-            <section id="cta">
-                <h2>Start adding location to your shopping...</h2>
-            </section>
-            <section id="search">
-                <h2>Search</h2>
-                <form action="search.html">
-                    <input name="searchinput" />
-                    <button type="submit">Search</button>
-                </form>
-            </section>
-            <section id="browse">
-                <h2>Browse</h2>
-                <ul>
-                    <li>Stores</li>
-                    <li>Settings</li>
-                    <li>Help</li>
-                    <li>About</li>
-                </ul>
-            </section>
+        <section id="inputform">
+            <form>
+                <input type="text" name="prodcat" id="prodcat" placeholder="Product / Category"><br />
+                <select name="store" id="store">
+                </select><br />
+                <select name="locateby" id="locateby">
+                </select><br />
+                <select name="locatebyarea" id="locatebyarea">
+                </select><br />
+                <input type="submit">
+            </form>
         </section>
 
         <footer>
@@ -42,5 +33,6 @@
                 </ul>
             </nav>
         </footer>
+        <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>
