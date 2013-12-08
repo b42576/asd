@@ -18,7 +18,7 @@
                 <input type="text" name="prodcat" id="prodcat" placeholder="Product / Category"><br />
                 <select name="store" id="store">
                     <option>==Select Store==</option>
-                </select>
+                </select><a id="getStores">Get Stores</a>
                 <br />
                 <!--
                 <div id="map"></div>
@@ -43,6 +43,16 @@
             </ul>
         </section>
 
+        <section id="export">
+            <h2>Export Data</h2><button id="exportToJSON">Export To JSON</button><button id="exportToCSV">Export To CSV</button>
+            <textarea class="exporttext"></textarea>
+        </section>
+
+        <section id="import">
+            <h2>Import Data</h2><!--<button id="import">Export To JSON</button><button id="exportToCSV">Export To CSV</button>-->
+            <textarea class="importtext"></textarea>
+        </section>
+
         <footer>
             <nav>
                 <ul>
@@ -52,8 +62,9 @@
                 </ul>
             </nav>
         </footer>
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.xml2json.js"></script>
         <script type="text/javascript" src="js/form.js"></script>
     </body>
 </html>

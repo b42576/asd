@@ -132,5 +132,21 @@ $(document).on("pageinit", function () {
         $('#display ul.display').append(displayItem);
 
     });
-});
 
+    $('#getStores').on('click', function (e) {
+        e.preventDefault();
+        console.log('trying to get stores');
+        $.ajax({
+            url: 'http://fryintl.com/citysocial/api/rest/venues',
+            //data: { APIKEY: "f24e6fb811", ZipCode: "19128" },
+            type: 'GET',
+            //crossDomain: true,
+            dataType: 'jsonp',
+            //datatype: 'application/json',
+            success: function (r) {
+                //var json = $.xml2json(response.ArrayOfStore);
+                console.log(r);
+            }
+        });
+    });
+});
