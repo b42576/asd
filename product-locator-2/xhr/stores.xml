@@ -1,0 +1,200 @@
+﻿<ArrayOfStores>
+  <Store>
+    <Storename>Publix Super Market</Storename>
+    <Address>2873 S Orange Ave</Address>
+    <City>Orlando</City>
+    <State>FL</State>
+    <Zip>32806</Zip>
+    <Phone> </Phone>
+    <StoreId>c592254d87</StoreId>
+  </Store>
+  <Store>
+    <Storename>Acme Markets  </Storename>
+    <Address>6601 Roosevelt Blvd</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19149</Zip>
+    <Phone> </Phone>
+    <StoreId>0214b8e6ef</StoreId>
+  </Store>
+  <Store>
+    <Storename>Acme Markets  </Storename>
+    <Address>7010 Germantown Avenue</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19119</Zip>
+    <Phone> </Phone>
+    <StoreId>c78676fdd0</StoreId>
+  </Store>
+  <Store>
+    <Storename>Acme Markets  </Storename>
+    <Address>1901 Johnson Street </Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19145</Zip>
+    <Phone> </Phone>
+    <StoreId>402e2c38e6</StoreId>
+  </Store>
+  <Store>
+    <Storename>Acme Markets  </Storename>
+    <Address>8200 Roosevelt Blvd.</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19152</Zip>
+    <Phone> </Phone>
+    <StoreId>d8d8ca4df8</StoreId>
+  </Store>
+  <Store>
+    <Storename>Acme Markets  </Storename>
+    <Address>1400 East Passyunk Avenue</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19147</Zip>
+    <Phone> </Phone>
+    <StoreId>7aee9bd355</StoreId>
+  </Store>
+  <Store>
+    <Storename>Acme Markets  </Storename>
+    <Address>8600 Ridge Avenue</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19128</Zip>
+    <Phone> </Phone>
+    <StoreId>d088e32c8c</StoreId>
+  </Store>
+  <Store>
+    <Storename>Acme Markets  </Storename>
+    <Address>3200-09 Red Lion Road</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19114</Zip>
+    <Phone> </Phone>
+    <StoreId>2c7d73f970</StoreId>
+  </Store>
+  <Store>
+    <Storename>Acme Markets  </Storename>
+    <Address>920 Red Lion Road</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19115</Zip>
+    <Phone> </Phone>
+    <StoreId>a5891e4d80</StoreId>
+  </Store>
+  <Store>
+    <Storename>Acme Markets  </Storename>
+    <Address>5927-59 Ridge Avenue</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19128</Zip>
+    <Phone> </Phone>
+    <StoreId>6917d0e9ee</StoreId>
+  </Store>
+  <Store>
+    <Storename>Acme Markets  </Storename>
+    <Address>6640 Oxford Avenue</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19111</Zip>
+    <Phone> </Phone>
+    <StoreId>7c02127e0b</StoreId>
+  </Store>
+  <Store>
+    <Storename>Trader Joes</Storename>
+    <Address>2121 Market St</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19103</Zip>
+    <Phone> </Phone>
+    <StoreId>52a9f14f48</StoreId>
+  </Store>
+  <Store>
+    <Storename>Whole Foods Market</Storename>
+    <Address>929 South St</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19147</Zip>
+    <Phone> </Phone>
+    <StoreId>05136635f7</StoreId>
+  </Store>
+  <Store>
+    <Storename>Save A Lot</Storename>
+    <Address>5610 Lancaster Ave</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19125</Zip>
+    <Phone> </Phone>
+    <StoreId>1fe079f0f4</StoreId>
+  </Store>
+  <Store>
+    <Storename>Save A Lot</Storename>
+    <Address>6422 Castor Ave</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19149</Zip>
+    <Phone> </Phone>
+    <StoreId>9a204dc704</StoreId>
+  </Store>
+  <Store>
+    <Storename>Save A Lot</Storename>
+    <Address>5800 Woodland Ave</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19143</Zip>
+    <Phone> </Phone>
+    <StoreId>29e01524e5</StoreId>
+  </Store>
+  <Store>
+    <Storename>Save A Lot</Storename>
+    <Address>5601 Vine Street</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19139</Zip>
+    <Phone> </Phone>
+    <StoreId>2b85dd95bd</StoreId>
+  </Store>
+  <Store>
+    <Storename>Save A Lot</Storename>
+    <Address>5740 Baltimore Ave</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19143</Zip>
+    <Phone> </Phone>
+    <StoreId>f321273547</StoreId>
+  </Store>
+  <Store>
+    <Storename>Save A Lot</Storename>
+    <Address>5834 Pulaski St</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19144</Zip>
+    <Phone> </Phone>
+    <StoreId>4d1f33158a</StoreId>
+  </Store>
+  <Store>
+    <Storename>Save A Lot</Storename>
+    <Address>3901-29 M Street</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19124</Zip>
+    <Phone> </Phone>
+    <StoreId>d735525e69</StoreId>
+  </Store>
+  <Store>
+    <Storename>Save A Lot</Storename>
+    <Address>3801-03 Aramingo Ave</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19137</Zip>
+    <Phone> </Phone>
+    <StoreId>cac659d94d</StoreId>
+  </Store>
+  <Store>
+    <Storename>Save A Lot</Storename>
+    <Address>2801 W Dauphin St</Address>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Zip>19132</Zip>
+    <Phone> </Phone>
+    <StoreId>e90e39ed8e</StoreId>
+  </Store>
+</ArrayOfStore>

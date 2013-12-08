@@ -1,0 +1,14 @@
+/*
+    Kevin Fry
+    ASD 1312
+    Main CSS File
+*/
+
+body {
+    background-color: #cbd7ff;
+    color: #0004d4;
+}
+
+footer nav {background-color: #000; color: #cbd7ff; }
+footer a { color:#cbd7ff; }
+header  {background-color: #000; color: #cbd7ff}

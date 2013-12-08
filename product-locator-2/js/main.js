@@ -10,13 +10,8 @@ $(document).on("pageinit", function () {
     var aislelist = Array("==Select Aisle==", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30");
     var locationlist = Array("==Select Location==", "Front", "Back", "Front End", "Entrance", "Left", "Right", "Front Right", "Front Left", "Back Right", "Back Left");
 
-<<<<<<< HEAD
-    var makeList = function (formid, listarray) {
-        var selectItem = document.getElementById(formid);
-=======
     function makeList(formid, listarray) {
         var selectItem = $(formid);
->>>>>>> origin/master
         for (var i = 0, j = listarray.length; i < j; i++) {
             var makeOption = document.createElement('option');
             var optionText = listarray[i];
@@ -26,7 +21,7 @@ $(document).on("pageinit", function () {
         }
     }
 
-    var locationchange = function () {
+    function locationchange() {
         var LocateByChange = document.getElementById('locateby');
         var LocateByChangeValue = LocateByChange.value;
         var locatebyareaSelect = document.getElementById('locatebyarea');
