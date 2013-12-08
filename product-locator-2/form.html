@@ -13,16 +13,32 @@
         </header>
 
         <section id="inputform">
+            <h2><a href="form.html">Add Form</a></h2>
             <form>
                 <input type="text" name="prodcat" id="prodcat" placeholder="Product / Category"><br />
                 <select name="store" id="store">
+                    <option>==Select Store==</option>
+                </select>
+                <br />
+                <div id="map"></div>
+                <br />
+                <select name="department" id="department">
+                    <option>==Locate By Department==</option>
                 </select><br />
-                <select name="locateby" id="locateby">
+                <select name="aisle" id="aisle">
+                    <option>==Select Aisle==</option>
                 </select><br />
-                <select name="locatebyarea" id="locatebyarea">
+                <select name="location" id="location">
+                    <option>==Select Location==</option>
                 </select><br />
-                <button type="submit">Submit</button>
+                <button id="submit">Submit</button>
             </form>
+        </section>
+
+        <section id="display">
+            <h2>Displaying Data</h2>
+            <ul>
+            </ul>
         </section>
 
         <footer>
@@ -36,6 +52,6 @@
         </footer>
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/form.js"></script>
     </body>
 </html>
