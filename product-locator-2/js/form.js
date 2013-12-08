@@ -2,61 +2,6 @@
 // ASD 1312
 // Main Javascript File
 
-/*
-$(document).on("pageinit", function () {
-    var storelist = Array("Select Store", "Acme", "ShopRite", "SuperFresh", "Giant", "Weis", "PathMark", "Target", "WalMart");
-    var locatebylist = Array("Select Locate By Type", "Department", "Aisle", "Location");
-    var departmentlist = Array("Select Department==", "Grocery", "Health &amp; Beauty", "General Merchandice", "Dairy", "Produce", "Meat", "Hot/Prepared Foods", "Deli", "Bakery");
-    var aislelist = Array("Select Aisle==", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30");
-    var locationlist = Array("Select Location==", "Front", "Back", "Front End", "Entrance", "Left", "Right", "Front Right", "Front Left", "Back Right", "Back Left");
-
-    function makeList(formid, listarray) {
-        var selectItem = $(formid);
-        for (var i = 0, j = listarray.length; i < j; i++) {
-            var makeOption = document.createElement('option');
-            var optionText = listarray[i];
-            makeOption.setAttribute("value", optionText);
-            makeOption.innerHTML = optionText;
-            selectItem.appendChild(makeOption);
-        }
-    }
-
-    function locationchange() {
-        var LocateByChange = document.getElementById('locateby');
-        var LocateByChangeValue = LocateByChange.value;
-        var locatebyareaSelect = document.getElementById('locatebyarea');
-        locatebyareaSelect.innerHTML = '';
-        console.log(LocateByChangeValue);
-
-        switch (LocateByChangeValue) {
-            case "Department":
-                makeList('locatebyarea', departmentlist);
-                break;
-            case "Aisle":
-                makeList('locatebyarea', aislelist);
-                break;
-            case "Location":
-                makeList('locatebyarea', locationlist);
-                break;
-            default: return false;
-        }
-
-    }
-
-    makeList('store', storelist);
-    makeList('locateby', locatebylist);
-    //makeList('department', departmentlist);
-    //makeList('aisle', aislelist);
-    //makeList('location', locationlist);
-
-    var LocateByC = document.getElementById('locateby');
-    //var LocateByChange = document.getElementById('locateby').selectedIndex;
-    //var LocateByChangeValue = document.getElementsByTagName('option')[LocateByChange].value;
-    //console.log('in main function ' + LocateByChangeValue);
-    LocateByC.addEventListener("click", locationchange);
-});
-*/
-
 $(document).on("pageinit", function () {
     // populate form fields
     var storelist = Array("[geolocate]", "Acme", "ShopRite", "SuperFresh", "Giant", "Weis", "PathMark", "Target", "WalMart");
@@ -83,23 +28,70 @@ $(document).on("pageinit", function () {
     };
     // display items in localstorage first
     var getData = function () {
-        for (var i = 0; i < localStorage.length; i++) {
-            var displayItem = '';
-            displayItem += '<li id="' + localStorage.key(i) + '"><ul>';
-            var objProduct = JSON.parse(localStorage.getItem(localStorage.key(i)));
-            displayItem += '    <li>Product / Category: ' + objProduct.prodcat + '</li>';
-            displayItem += '    <li>Store: ' + objProduct.store + '</li>';
-            displayItem += '    <li>Department: ' + objProduct.department + '</li>';
-            displayItem += '    <li>Aisle: ' + objProduct.aisle + '</li>';
-            displayItem += '    <li>Location: ' + objProduct.location + '</li>';
-            displayItem += '    <li><button class="edit" data-key="' + betterkey + '">Edit</button></li>';
-            displayItem += '</ul></li>';
-            $('#display ul').append(displayItem);
+        var displayItem = '';
+        imax = localStorage.length;
+        for (var i = 0; i < imax; i++) {
+            var thiskey = localStorage.key(i);
+            var thisitem = localStorage.getItem(thiskey);
+            if (!(thiskey ^= "productLocator")) {
+                displayItem += '<li id="' + localStorage.key(i) + '"><ul>';
+                //console.log();
+                //console.log(localStorage.getItem(i));
+                var objProduct = JSON.parse(thisitem);
+                displayItem += '    <li>Product / Category: ' + objProduct.prodcat + '</li>';
+                displayItem += '    <li>Store: ' + objProduct.store + '</li>';
+                displayItem += '    <li>Department: ' + objProduct.department + '</li>';
+                displayItem += '    <li>Aisle: ' + objProduct.aisle + '</li>';
+                displayItem += '    <li>Location: ' + objProduct.location + '</li>';
+                displayItem += '    <li>';
+                displayItem += '        <button class="edit" data-key="' + localStorage.key(i) + '">Edit</button>';
+                displayItem += '        <button class="delete" data-key="' + localStorage.key(i) + '">Delete</button>';
+                displayItem += '    </li>';
+                displayItem += '</ul></li>';
+            }
+
         }
+        $('#display ul.display').append(displayItem);
+
+        //return false;
 
     };
     //getData();
-    $('#submit').on('click', function (event) {
+    //$('#getData').on('click', function (e) {
+    //    e.preventDefault();
+    //    
+    //});
+
+    getData();
+
+    $('.edit').on('click', function () {
+        //e.preventDefault();
+        var thiskey = $(this).data('key');
+        console.log(thiskey);
+        var thisitem = localStorage.getItem(thiskey);
+        console.log(thisitem);
+        var objProduct = JSON.parse(thisitem);
+        console.log(objProduct);
+        var prodcat = objProduct.prodcat;
+        $('#prodcat').val(prodcat);
+        var store = objProduct.store;
+        //console.log(store);
+        for (var i = 0, j = storelist.length; i < j; i++) {
+
+            if (storelist[i] == store) {
+                $('<option value="' + storelist[i] + '" selected>' + storelist[i] + '</option>').appendTo('#store');
+            } else {
+                $('<option value="' + storelist[i] + '">' + storelist[i] + '</option>').appendTo('#store');
+            }
+        };
+        $('#department').val(objProduct.department);
+        $('#aisle').val(objProduct.aisle);
+        $('#location').val(objProduct.location);
+        $('#submit').html('Edit Item');
+    });
+
+    $('#submit').on('click', function (e) {
+        e.preventDefault();
         var key = new Date().getTime();
         var betterkey = 'productLocator' + key;
         var objProduct = {};
@@ -122,8 +114,8 @@ $(document).on("pageinit", function () {
         displayItem += '    <li>Location: ' + objProduct.location + '</li>';
         displayItem += '    <li><button class="edit" data-key="' + betterkey + '">Edit</button></li>';
         displayItem += '</ul></li>';
-        $('#display ul').append(displayItem);
-        event.preventDefault();
+        $('#display ul.display').append(displayItem);
+
     });
 });
 
