@@ -11,9 +11,15 @@ $(document).on("pageinit", function () {
     var locationlist = Array("Middle", "Front", "Back", "Front", "Entrance", "Left", "Right", "Front Right", "Front Left", "Back Right", "Back Left", "A", "B");
 
     // stores
+
+
     for (var i = 0, j = storelist.length; i < j; i++) {
         $('<option value="' + storelist[i] + '">' + storelist[i] + '</option>').appendTo('#store');
     };
+    var populateStores = function (selected) {
+        //var $el = $el();
+    };
+
     // locate by options
     for (var i = 0, j = departmentlist.length; i < j; i++) {
         $('<option value="' + departmentlist[i] + '">' + departmentlist[i] + '</option>').appendTo('#department');
@@ -76,18 +82,27 @@ $(document).on("pageinit", function () {
         $('#prodcat').val(prodcat);
         var store = objProduct.store;
         //console.log(store);
-        for (var i = 0, j = storelist.length; i < j; i++) {
-
-            if (storelist[i] == store) {
-                $('<option value="' + storelist[i] + '" selected>' + storelist[i] + '</option>').appendTo('#store');
-            } else {
-                $('<option value="' + storelist[i] + '">' + storelist[i] + '</option>').appendTo('#store');
-            }
-        };
+        //var storeOption = $('<option></option>').attr("value", "option value").text(store);
+        //$("#store").append(storeOption);
+        $('#store').val(objProduct.store);
+        $(document).ready(function () {
+            $("option[value='" + objProduct.store + "'] #store").attr('selected', 'selected');
+        });
         $('#department').val(objProduct.department);
         $('#aisle').val(objProduct.aisle);
         $('#location').val(objProduct.location);
         $('#submit').html('Edit Item');
+        $('#postedit').on('click', function (e) {
+            // our updated object
+            var objProduct = {};
+            objProduct.prodcat = $('#prodcat').val();
+            objProduct.store = $('#store').val();
+            objProduct.department = $('#department').val();
+            objProduct.aisle = $('#aisle').val();
+            objProduct.location = $('#location').val();
+            var encodedJSON = JSON.stringify(objProduct);
+            localStorage.setItem(thiskey, encodedJSON);
+        });
     });
 
     $('#submit').on('click', function (e) {
