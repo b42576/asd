@@ -13,8 +13,8 @@
         </header>
 
         <section id="inputform">
-            <h2><a href="form.html">Add Form</a></h2>
-            <form>
+            <h2 id="formtype"><a href="form.html">Add Form</a></h2>
+            <form method="post">
                 <input type="text" name="prodcat" id="prodcat" placeholder="Product / Category"><br />
                 <select name="store" id="store">
                     <option>==Select Store==</option>
@@ -44,8 +44,8 @@
         </section>
 
         <section id="export">
-            <h2>Export Data</h2><button id="exportToJSON">Export To JSON</button><button id="exportToCSV">Export To CSV</button>
-            <textarea class="exporttext"></textarea>
+            <h2>Export Data</h2><button class="exportToJSON">Export To JSON</button><button id="exportToCSV">Export To CSV</button>
+            <textarea id="exporttext"></textarea>
         </section>
 
         <section id="import">

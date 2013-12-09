@@ -85,13 +85,15 @@ $(document).on("pageinit", function () {
         //var storeOption = $('<option></option>').attr("value", "option value").text(store);
         //$("#store").append(storeOption);
         $('#store').val(objProduct.store);
-        $(document).ready(function () {
-            $("option[value='" + objProduct.store + "'] #store").attr('selected', 'selected');
-        });
+        //$(document).ready(function () {
+        //    $("option[value='" + objProduct.store + "'] #store").attr('selected', 'selected');
+        //});
         $('#department').val(objProduct.department);
         $('#aisle').val(objProduct.aisle);
         $('#location').val(objProduct.location);
-        $('#submit').html('Edit Item');
+        //$('button #submit').val('Edit Item');
+        $('#submit').attr("id", "postedit");
+        $('#formtype').html('Editing Item');
         $('#postedit').on('click', function (e) {
             // our updated object
             var objProduct = {};
@@ -102,11 +104,22 @@ $(document).on("pageinit", function () {
             objProduct.location = $('#location').val();
             var encodedJSON = JSON.stringify(objProduct);
             localStorage.setItem(thiskey, encodedJSON);
+            window.location.reload();
+            return false;
         });
+
     });
 
-    $('#submit').on('click', function (e) {
-        e.preventDefault();
+    $('.delete').on('click', function () {
+        //e.preventDefault();
+        var thiskey = $(this).data('key');
+        localStorage.removeItem(thiskey);
+        window.location.reload();
+        return false;
+    });
+
+    $('#submit').on('click', function () {
+        //e.preventDefault();
         var key = new Date().getTime();
         var betterkey = 'productLocator' + key;
         var objProduct = {};
@@ -130,22 +143,33 @@ $(document).on("pageinit", function () {
         displayItem += '    <li><button class="edit" data-key="' + betterkey + '">Edit</button></li>';
         displayItem += '</ul></li>';
         $('#display ul.display').append(displayItem);
-
+        window.location.reload();
+        return false;
     });
 
-    $('#getStores').on('click', function (e) {
-        e.preventDefault();
+    $('#getStores').on('click', function () {
+        //e.preventDefault();
         console.log('trying to get stores');
         $.ajax({
-            url: 'http://fryintl.com/citysocial/api/rest/venues',
+            url: 'http://product-locator.azurewebsites.net/product-locator-2/xhr/api.php',
             //data: { APIKEY: "f24e6fb811", ZipCode: "19128" },
-            type: 'GET',
+            type: 'POST',
             //crossDomain: true,
-            dataType: 'jsonp',
-            //datatype: 'application/json',
-            success: function (r) {
+            dataType: 'jsonp json',
+            async: false,
+            //jsonp: false,
+            //datatype: 'text/xml',
+            success: function (r, s) {
+                console.log('success');
                 //var json = $.xml2json(response.ArrayOfStore);
                 console.log(r);
+                console.log(s);
+            },
+            error: function (jqX, stat, err) {
+                console.log('error');
+                console.log(jqX);
+                console.log(stat);
+                console.log(err);
             }
         });
     });
