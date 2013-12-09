@@ -1,4 +1,4 @@
-var stores = {
+var stores = { 
     "store1": {
         "store": "Publix Super Market",
         "address": "2873 S Orange Ave",

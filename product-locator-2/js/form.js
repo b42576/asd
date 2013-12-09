@@ -118,6 +118,31 @@ $(document).on("pageinit", function () {
         return false;
     });
 
+    $('.exportToJSON').on('click', function () {
+        var displayItem = '{ "productLocations":[';
+        imax = localStorage.length;
+        for (var i = 0; i < imax; i++) {
+            var thiskey = localStorage.key(i);
+            var thisitem = localStorage.getItem(thiskey);
+            if (!(thiskey ^= "productLocator")) {
+
+                displayItem += '{ "key":"' + localStorage.key(i) + '",';
+                //console.log();
+                //console.log(localStorage.getItem(i));
+                var objProduct = JSON.parse(thisitem);
+                displayItem += '    "prodcat": "' + objProduct.prodcat + '",';
+                displayItem += '    "store": "' + objProduct.store + '",';
+                displayItem += '    "department": "' + objProduct.department + '",';
+                displayItem += '    "aisle": "' + objProduct.aisle + '",';
+                displayItem += '    "location": "' + objProduct.location + '"}';
+            }
+            if ((!(thiskey ^= "productLocator")) && (!(imax == i))) { displayItem += ','; }
+        }
+        // need to remove the last , from the set
+        displayItem += ']}';
+        $('#exporttext').html(displayItem);
+    });
+
     $('#submit').on('click', function () {
         //e.preventDefault();
         var key = new Date().getTime();
@@ -150,27 +175,35 @@ $(document).on("pageinit", function () {
     $('#getStores').on('click', function () {
         //e.preventDefault();
         console.log('trying to get stores');
-        $.ajax({
-            url: 'http://product-locator.azurewebsites.net/product-locator-2/xhr/api.php',
-            //data: { APIKEY: "f24e6fb811", ZipCode: "19128" },
-            type: 'POST',
-            //crossDomain: true,
-            dataType: 'jsonp json',
-            async: false,
-            //jsonp: false,
-            //datatype: 'text/xml',
-            success: function (r, s) {
-                console.log('success');
-                //var json = $.xml2json(response.ArrayOfStore);
-                console.log(r);
-                console.log(s);
-            },
-            error: function (jqX, stat, err) {
-                console.log('error');
-                console.log(jqX);
-                console.log(stat);
-                console.log(err);
-            }
+        $.getJSON('xhr/stores.json.js', function (data) {
+            $.each(data, function (i, value) {
+                $('<option value="' + value.store + '">' + value.store + '</option>').appendTo('#store');
+            })
         });
+        /*
+        $.ajax({
+        url: 'xhr/stores.json',
+        // http://fryintl.com/citysocial/api/rest/venues
+        //data: { APIKEY: "f24e6fb811", ZipCode: "19128" },
+        type: 'GET',
+        //crossDomain: true,
+        dataType: 'jsonp json',
+        //async: false,
+        //jsonp: false,
+        //datatype: 'text/xml',
+        success: function (data, status) {
+        console.log(status, data);
+        //var json = $.xml2json(response.ArrayOfStore);
+        console.log(r);
+        console.log(s);
+        },
+        error: function (jqX, stat, err) {
+        console.log('error');
+        console.log(jqX);
+        console.log(stat);
+        console.log(err);
+        }
+        });
+        */
     });
 });
