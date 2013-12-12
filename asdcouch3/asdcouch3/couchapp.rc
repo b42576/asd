@@ -2,6 +2,9 @@
   "env": {
     "local": {
       "db": "http://127.0.0.1:5984/productlocator"
+    },
+    "cloudant": {
+      "db": "https://slimetwelleselleepandist:XAn28ArASVGjJUwcmXCib8Nx@kevinfry.cloudant.com/thisweeksad"
     }
   }
 }

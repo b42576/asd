@@ -188,7 +188,7 @@ $(document).on("pageinit", function () {
 		$('#store').append('<option>Loading from XML</option>').selectmenu("refresh", true);
 		$.ajax({
 			type: 'GET',
-			url: 'xhr/stores.xml',
+			url: 'stores.xml',
 			dataType: "xml",
 			success: function(whatsreturned, status, jqXHR){
 				$('#store').empty();
@@ -246,7 +246,7 @@ $(document).on("pageinit", function () {
 		$('#store').append('<option>Loading from CSV</option>').selectmenu("refresh", true);
 		$.ajax({
 			type: 'GET',
-			url:'xhr/stores.txt',
+			url:'stores.txt',
 			dataType: "text",
 			success: function(whatsreturned, status, jqXHR){
 				$('#store').empty();
