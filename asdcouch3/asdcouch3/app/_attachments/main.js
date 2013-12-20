@@ -3,7 +3,11 @@
 // Main Javascript File
 
 
-$(document).on("pageinit", function () {
+$( document ).on( "pageinit", "#homePage", function() {
+	$("#homeSearchInput").change(function(){
+		var homeSerchInputText = $("#homeSearchInput").val();
+		
+	});
 	$.ajax({
 		"url": "_view/stores",
 		"dataType": "json",

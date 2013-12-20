@@ -1,0 +1,10 @@
+{
+  "env": {
+    "local": {
+      "db": "http://127.0.0.1:5984/thisweeksad"
+    },
+    "cloudant": {
+      "db": "https://slimetwelleselleepandist:XAn28ArASVGjJUwcmXCib8Nx@kevinfry.cloudant.com/thisweeksad"
+    }
+  }
+}

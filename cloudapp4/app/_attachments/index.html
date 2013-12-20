@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- Kevin Fry, ASD 1312, Main HTML Template -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Product Locator Home</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="keywords" content="thisweeksad, product locator, grocery shopping">
+        <meta name="description" content="Keep track of your shopping with you own aisle by aisle directory.">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="jquery.mobile-1.3.2.min.css" />
+    </head>
+    <body>
+    	
+    	<div data-role="page" id="homePage">
+	        <header data-role="header" data-position="fixed">
+	            <h1>Product Locator</h1>
+	        </header>
+	
+	        <section id="homePageContent">
+	            <section id="cta">
+	                <h2>Start adding location to your shopping...</h2>
+	            </section>
+	            <section id="search">
+	                <h2>Search</h2>
+	                <form action="search.html">
+	                    <input name="searchinput" id="homeSearchInput />
+	                    <button type="submit">Search</button>
+	                </form>
+	                <ul id="storeSearchList" data-role="listview">
+	                    
+	                </ul>
+	                
+	            </section>
+	            <section id="browse">
+	                <h2>Stores</h2>
+	                <ul id="storelist" data-role="listview">
+	                    <li><a href="#addStorePage">Add Store</a></li>
+	                </ul>
+	                <h2>Departments</h2>
+	                <ul id="departmentlist" data-role="listview">
+	                    <li>Stores</li>
+	                </ul>
+	            </section>
+	        </section>
+	
+	        <footer data-role="footer" data-position="fixed">
+	            <nav data-role="navbar">
+	                <ul>
+	                    <li><a href="index.html" id="homepagelink" data-ajax="false" data-role="button" data-icon="home" class="ui-btn-active">Home</a></li>
+	                    <li><a href="search.html" id="searchpagelink"  data-ajax="false" data-role="button" data-icon="search">Search</a></li>
+	                    <li><a href="form.html" id="addpagelink" data-ajax="false" data-role="button" data-icon="plus">Add</a></li>
+	                </ul>
+	            </nav>
+	        </footer>
+        </div>
+        
+        <div data-role="page" id="addStorePage">
+	        <header data-role="header" data-position="fixed">
+	            <h1>Product Locator</h1>
+	        </header>
+	
+	        <section id="addStorePageContent">
+	            <section id="addStoreCTA">
+	                <h2>Add Your Store</h2>
+	            </section>
+	            <section id="addStorePageSection">
+	                <form action="#" id="addStoreForm">
+	                	<input type="hidden" name="type" value="store" />
+	                    <input type="text" name="nameofstore" id="nameofstore" placeholder="Acme of Burbank" />
+	                    <input type="text" name="address" id="address" placeholder="1234 Some Street" />
+	                    <input type="text" name="city" id="city" placeholder="City" />
+	                    <input type="text" name="state" id="state" placeholder="ST" />
+	                    <input type="text" name="zip" id="zip" placeholder="12345" />
+	                    <input type="text" name="phone" id="phone" placeholder="123-456-7890" />
+	                    <textarea name="hours" id="hours" rows="7">Sunday: 6am-11pm,
+Monday: 6am-12am,
+Tuesday: 6am-12am,
+Wednesday: 6am-12am,
+Thursday: 6am-12am,
+Friday: 6am-12am,
+Saturday: 6am-12am</textarea>
+	                    <button type="submit" id="addStoreButton">Add Store</button>
+	                </form>
+				</section>
+			</section>
+
+	        <footer data-role="footer" data-position="fixed">
+	            <nav data-role="navbar">
+	                <ul>
+	                    <li><a href="index.html" id="homepagelink" data-ajax="false" data-role="button" data-icon="home">Home</a></li>
+	                    <li><a href="search.html" id="searchpagelink"  data-ajax="false" data-role="button" data-icon="search">Search</a></li>
+	                    <li><a href="form.html" id="addpagelink" data-ajax="false" data-role="button" data-icon="plus">Add</a></li>
+	                </ul>
+	            </nav>
+	        </footer>
+        </div>
+    	
+        
+        <div data-role="page" id="editStorePage">
+	        <header data-role="header" data-position="fixed">
+	            <h1>Editing Store</h1>
+	        </header>
+	
+	        <section id="addStorePageContent">
+	            <section id="addStoreCTA">
+	                <h2>Add Your Store</h2>
+	            </section>
+	            <section id="addStorePageSection">
+	                <form action="#" id="addStoreForm">
+	                	<input type="hidden" name="type" value="store" />
+	                    <input type="text" name="nameofstore" id="nameofstore" placeholder="Acme of Burbank" />
+	                    <input type="text" name="address" id="address" placeholder="1234 Some Street" />
+	                    <input type="text" name="city" id="city" placeholder="City" />
+	                    <input type="text" name="state" id="state" placeholder="ST" />
+	                    <input type="text" name="zip" id="zip" placeholder="12345" />
+	                    <input type="text" name="phone" id="phone" placeholder="123-456-7890" />
+	                    <textarea name="hours" id="hours" rows="7">Sunday: 6am-11pm,
+Monday: 6am-12am,
+Tuesday: 6am-12am,
+Wednesday: 6am-12am,
+Thursday: 6am-12am,
+Friday: 6am-12am,
+Saturday: 6am-12am</textarea>
+	                    <button type="submit" id="addStoreButton">Add Store</button>
+	                </form>
+				</section>
+			</section>
+
+	        <footer data-role="footer" data-position="fixed">
+	            <nav data-role="navbar">
+	                <ul>
+	                    <li><a href="index.html" id="homepagelink" data-ajax="false" data-role="button" data-icon="home">Home</a></li>
+	                    <li><a href="search.html" id="searchpagelink"  data-ajax="false" data-role="button" data-icon="search">Search</a></li>
+	                    <li><a href="form.html" id="addpagelink" data-ajax="false" data-role="button" data-icon="plus">Add</a></li>
+	                </ul>
+	            </nav>
+	        </footer>
+        </div>
+    	
+        <script type="text/javascript" src="jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="jquery.mobile-1.3.2.min.js"></script>
+        <script type="text/javascript" src="jquery.couch.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+        <!--
+         -->
+    </body>
+</html>
