@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- Kevin Fry, ASD 1312, Main HTML Template -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Store Details</title>
+    </head>
+    <body>
+        <div data-role="page" id="editStorePage">
+	        <header data-role="header" data-position="fixed">
+	            <h1>Editing Store</h1>
+	        </header>
+	
+	        <section id="editStorePageContent">
+	            <section id="addStoreCTA">
+	                <h2>Edit Your Store</h2>
+	            </section>
+	            <section id="editStorePageSection">
+	                <form action="#" id="editStoreForm">
+	                	<input type="hidden" name="type" value="store" />
+	                    <input type="text" name="editnameofstore" id="editnameofstore" />
+	                    <input type="text" name="editaddress" id="editaddress" placeholder="1234 Some Street" />
+	                    <input type="text" name="editcity" id="editcity" placeholder="City" />
+	                    <input type="text" name="editstate" id="editstate" placeholder="ST" />
+	                    <input type="text" name="editzip" id="editzip" placeholder="12345" />
+	                    <input type="text" name="editphone" id="editphone" placeholder="123-456-7890" />
+	                    <textarea name="edithours" id="edithours" rows="7">Sunday: 6am-11pm,
+Monday: 6am-12am,
+Tuesday: 6am-12am,
+Wednesday: 6am-12am,
+Thursday: 6am-12am,
+Friday: 6am-12am,
+Saturday: 6am-12am</textarea>
+	                    <button type="submit" id="editStoreButton">Edit Store</button>
+	                </form>
+				</section>
+			</section>
+
+	        <footer data-role="footer" data-position="fixed">
+	            <nav data-role="navbar">
+	                <ul>
+	                    <li><a href="index.html" data-ajax="false" data-role="button" data-icon="home">Home</a></li>
+	                    <li><a href="index.html#browseStores" data-ajax="false" data-role="button" data-icon="grid">Stores</a></li>
+	                    <li><a href="index.html#browsedepartments" data-ajax="false" data-role="button" data-icon="info">Departments</a></li>
+	                    <li><a href="productlocator.html" data-ajax="false" data-role="button" data-icon="plus">Locator</a></li>
+	                </ul>
+	            </nav>
+	        </footer>
+        </div>
+            	
+            	
+        
+    </body>
+</html>
+        

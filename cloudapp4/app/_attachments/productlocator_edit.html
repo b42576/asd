@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- Kevin Fry, ASD 1312, Main HTML Template -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Product Locator</title>
+    </head>
+    <body>
+    
+        <div data-role="page" id="editProductLocatorPage">
+	        <header data-role="header" data-position="fixed">
+	            <h1>Editing Product Locatation</h1>
+	        </header>
+	
+            <section id="editProductLocatorPageSection">
+                <h2 id="formtype">Edit Form</h2>
+                <form method="post"  id="editProductLocatorForm">
+                    <input type="text" name="editprodcat" id="editprodcat"><br />
+                    <select name="editstore" id="editstore">
+                        <option>==Select Store==</option>
+                    </select>
+                    <br />
+                     <select name="editdepartment" id="editdepartment">
+                        <option>==Locate By Department==</option>
+                    </select><br />
+                    <select name="editaisle" id="editaisle">
+                        <option>==Select Aisle==</option>
+                    </select><br />
+                    <select name="editlocation" id="editlocation">
+                        <option>==Select Location==</option>
+                    </select><br />
+                    <button id="editProductLocationButton">Update</button>
+                    <button id="deleteProductLocationButton">Delete</button>
+                </form>
+            </section>
+
+	        <footer data-role="footer" data-position="fixed">
+	            <nav data-role="navbar">
+	                <ul>
+	                    <li><a href="index.html" data-ajax="false" data-role="button" data-icon="home">Home</a></li>
+	                    <li><a href="index.html#browseStores" data-ajax="false" data-role="button" data-icon="grid">Stores</a></li>
+	                    <li><a href="index.html#browsedepartments" data-ajax="false" data-role="button" data-icon="info">Departments</a></li>
+	                    <li><a href="productlocator.html" data-ajax="false" data-role="button" data-icon="plus">Locator</a></li>
+	                </ul>
+	            </nav>
+	        </footer>
+	        
+        </div>
+        
+    </body>
+</html>
+        
